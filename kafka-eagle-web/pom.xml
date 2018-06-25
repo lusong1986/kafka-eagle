@@ -12,25 +12,12 @@
 	<properties>
 		<package.name>ke</package.name>
 		<junit.version>4.11</junit.version>
-		<jdk.version>1.7</jdk.version>
+		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.1.6.RELEASE</spring.version>
 		<mybatis.version>3.2.6</mybatis.version>
 		<shiro.version>1.3.2</shiro.version>
 	</properties>
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<name>nexus</name>
-			<url>http://central.maven.org/maven2/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -192,15 +179,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
