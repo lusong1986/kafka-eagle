@@ -1,19 +1,14 @@
 /**
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE
+ * file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
  */
 package org.smartloli.kafka.eagle.common.util;
 
@@ -22,20 +17,20 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Vector;
 
-import kafka.utils.ZKStringSerializer$;
-
 import org.I0Itec.zkclient.ZkClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import kafka.utils.ZKStringSerializer$;
 
 /**
  * ZkClient pool utils.
  *
  * @author smartloli.
  *
- *         Created by Aug 14, 2016.
+ * Created by Aug 14, 2016.
  * 
- *         Update by hexiang 20170216
+ * Update by hexiang 20170216
  */
 public final class ZKPoolUtils {
 
@@ -65,7 +60,8 @@ public final class ZKPoolUtils {
 					zkc = new ZkClient(entry.getValue());
 					zkCliPool.add(zkc);
 
-					zkSerializer = new ZkClient(entry.getValue(), Integer.MAX_VALUE, 100000, ZKStringSerializer$.MODULE$);
+					zkSerializer = new ZkClient(entry.getValue(), Integer.MAX_VALUE, 100000,
+							ZKStringSerializer$.MODULE$);
 					zkCliPoolSerializer.add(zkSerializer);
 				} catch (Exception ex) {
 					LOG.error(ex.getMessage());
@@ -141,7 +137,8 @@ public final class ZKPoolUtils {
 		} else {
 			for (int i = 0; i < zkCliPoolSize; i++) {
 				try {
-					zkSerializer = new ZkClient(clusterAliass.get(clusterAlias), Integer.MAX_VALUE, 100000, ZKStringSerializer$.MODULE$);
+					zkSerializer = new ZkClient(clusterAliass.get(clusterAlias), Integer.MAX_VALUE, 100000,
+							ZKStringSerializer$.MODULE$);
 					zkCliPoolSerializer.add(zkSerializer);
 				} catch (Exception e) {
 					LOG.error(e.getMessage());
